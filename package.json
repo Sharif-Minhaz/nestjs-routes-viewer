@@ -1,6 +1,6 @@
 {
 	"name": "nestjs-routes-viewer",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "nestjs-routes-viewer is a lightweight utility for NestJS applications that logs all registered routes in a clear and structured format. It simplifies debugging and route management by providing an easy way to view all HTTP methods and paths in your NestJS application.",
 	"homepage": "https://github.com/Sharif-Minhaz/nestjs-routes-viewer",
 	"repository": {
