@@ -26,9 +26,7 @@
 		"debugging",
 		"utility",
 		"route",
-		"viewer",
-		"NestJS",
-		"utility"
+		"viewer"
 	],
 	"author": "Sharif Md. Minhaz",
 	"license": "MIT",
