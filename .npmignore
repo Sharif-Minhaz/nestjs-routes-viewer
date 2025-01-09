@@ -1,0 +1,16 @@
+# Ignore TypeScript source files and config files
+src/index.ts
+tsconfig.json
+*.log
+
+# Ignore test and build files
+tests/
+build/
+*.test.js
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+
+# Ignore any local configuration or environment files
+.env
