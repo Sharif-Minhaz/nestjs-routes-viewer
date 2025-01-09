@@ -51,3 +51,29 @@ Registered Routes:
 | 19    | POST     | `/api/v1/categories`                    |
 | 20    | POST     | `/api/v1/auth/register`                 |
 ```
+
+**Configuration:**
+The logRegisteredRoutes function is designed to log all the registered routes in a NestJS application. This guide explains the configuration options available for customizing its behavior.
+
+The second parameter of the logRegisteredRoutes function accepts a configuration object with the following options:
+
+1. ignoreMethods
+
+    Type: HttpMethod[]
+    Default: [] (no methods are ignored by default)
+    Description: An array of HTTP methods to exclude from the route logs. This is useful for filtering out methods such as `options ` or `head` that might not be relevant for debugging or API documentation purposes.
+
+The following HTTP methods are supported and can be included in the `ignoreMethods` array:
+
+| HTTP Method | Description                                      |
+| ----------- | ------------------------------------------------ |
+| `get`       | Retrieve data from the server.                   |
+| `post`      | Send data to the server.                         |
+| `put`       | Update an existing resource.                     |
+| `patch`     | Partially update a resource.                     |
+| `delete`    | Remove a resource.                               |
+| `head`      | Same as `GET`but only retrieves headers.         |
+| `options`   | Describe communication options for the resource. |
+| `trace`     | Perform a message loop-back test.                |
+| `connect`   | Establish a tunnel to the server.                |
+| `acl`       | Access Control List requests.                    |

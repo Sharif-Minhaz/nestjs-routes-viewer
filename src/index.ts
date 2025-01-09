@@ -4,14 +4,15 @@ import { HttpMethod } from "types";
 /**
  * Logs all registered routes in a NestJS application.
  * @param app - The NestJS application instance (must implement INestApplication).
- * @param options - Configuration options for logging routes.
- * @param options.ignoreMethods - An array of HTTP methods to ignore when logging routes. This helps filter out specific HTTP methods like 'GET', 'POST', etc.
+ * @param options - Configuration options for logging routes. (Optional)
+ * @param options.ignoreMethods - An array of HTTP methods to ignore when logging routes. This helps filter out specific HTTP methods like 'get', 'post', etc (lowercase). (Optional)
  * @returns {void}
  */
 export function logRegisteredRoutes(
 	app: INestApplication<any>,
-	{ ignoreMethods }: { ignoreMethods: HttpMethod[] }
+	{ ignoreMethods }: { ignoreMethods?: HttpMethod[] } = {}
 ) {
+	const methodsToIgnore = ignoreMethods || [];
 	// Log all registered routes
 	const server = app.getHttpServer();
 
@@ -27,7 +28,7 @@ export function logRegisteredRoutes(
 		.filter(
 			(layer: any) =>
 				layer.route &&
-				!ignoreMethods.includes(
+				!methodsToIgnore.includes(
 					Object.keys(layer.route?.methods || {})[0].toLowerCase() as HttpMethod
 				)
 		)

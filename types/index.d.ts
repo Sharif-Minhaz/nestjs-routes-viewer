@@ -15,6 +15,6 @@ type HttpMethod =
 declare module "nestjs-routes-viewer" {
 	export function logRegisteredRoutes(
 		app: INestApplication<any>,
-		{ ignoreMethods }: { ignoreMethods: HttpMethod[] }
+		options?: { ignoreMethods?: HttpMethod[] }
 	): void;
 }
