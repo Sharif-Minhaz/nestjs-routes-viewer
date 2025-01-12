@@ -68,12 +68,24 @@ The second parameter of the logRegisteredRoutes function accepts a configuration
     | HTTP Method | Description                                     |
     | ----------- | ----------------------------------------------- |
     | get         | Retrieve data from the server                   |
-    | `post`      | Send data to the server                         |
+    | post        | Send data to the server                         |
     | put         | Update an existing resource                     |
-    | `patch`     | Partially update a resource                     |
+    | patch       | Partially update a resource                     |
     | delete      | Remove a resource                               |
-    | `head`      | Same as GET but only retrieves headers          |
+    | head        | Same as GET but only retrieves headers          |
     | options     | Describe communication options for the resource |
-    | `trace`     | Perform a message loop-back test                |
+    | trace       | Perform a message loop-back test                |
     | connect     | Establish a tunnel to the server                |
-    | `acl`       | Access Control List requests                    |
+    | acl         | Access Control List requests                    |
+
+    **Example Usage:**
+
+    ```typescript
+    import { logRegisteredRoutes } from "nest-routes-viewer";
+
+    const app = await NestFactory.create(AppModule);
+    await app.listen(3000);
+
+    // Log all registered routes, excluding 'acl' and 'head' methods
+    logRegisteredRoutes(app, { ignoreMethods: ["acl", "head"] });
+    ```
