@@ -1,5 +1,5 @@
 **Description** :
-`nest-routes-viewer` is a lightweight utility for NestJS applications that logs all registered routes in a clear and structured format. It simplifies debugging and route management by providing an easy way to view all HTTP methods and paths in your NestJS application.
+`nestjs-routes-viewer` is a lightweight utility for NestJS applications that logs all registered routes in a clear and structured format. It simplifies debugging and route management by providing an easy way to view all HTTP methods and paths in your NestJS application.
 
 **Features** :
 
@@ -13,7 +13,7 @@ Perfect for developers working with NestJS who need a quick and reliable way to 
 **How to Use** :
 
 ```typescript
-import { logRegisteredRoutes } from "nest-routes-viewer";
+import { logRegisteredRoutes } from "nestjs-routes-viewer";
 
 const app = await NestFactory.create(AppModule);
 await app.listen(3000);
@@ -81,7 +81,7 @@ The second parameter of the logRegisteredRoutes function accepts a configuration
     **Example Usage:**
 
     ```typescript
-    import { logRegisteredRoutes } from "nest-routes-viewer";
+    import { logRegisteredRoutes } from "nestjs-routes-viewer";
 
     const app = await NestFactory.create(AppModule);
     await app.listen(3000);
