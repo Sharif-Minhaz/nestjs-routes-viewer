@@ -1,6 +1,6 @@
 import { INestApplication } from "@nestjs/common";
 
-type HttpMethod =
+export type HttpMethod =
 	| "get"
 	| "post"
 	| "put"
@@ -18,3 +18,9 @@ declare module "nestjs-routes-viewer" {
 		options?: { ignoreMethods?: HttpMethod[] }
 	): void;
 }
+
+export type RouteInfo = {
+	method: string;
+	path: string;
+	guards: string[];
+};
