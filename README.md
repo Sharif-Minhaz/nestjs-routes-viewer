@@ -60,7 +60,9 @@ The second parameter of the logRegisteredRoutes function accepts a configuration
 1. `ignoreMethods`
 
     **Type**: `HttpMethod[]`
+
     **Default**: [] (no methods are ignored by default)
+
     **Description**: An array of HTTP methods to exclude from the route logs. This is useful for filtering out methods such as `options ` or `head` that might not be relevant for debugging or API documentation purposes.
 
     The following HTTP methods are supported and can be included in the `ignoreMethods` array:
@@ -93,7 +95,9 @@ The second parameter of the logRegisteredRoutes function accepts a configuration
 2. `showGuards`
 
     **Type**: `boolean`
+
     **Default**: `false`
+
     **Description**: A boolean flag that determines whether to include the guards column (used by the routes, eg. `@UseGuards(AuthGuard)`) in the route logs. Set this to true if you want to include guards information in the logs.
 
     **Example Usage:**
